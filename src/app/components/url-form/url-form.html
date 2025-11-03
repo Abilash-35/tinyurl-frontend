@@ -1,0 +1,37 @@
+<div class="form-container">
+
+  <form (ngSubmit)="onSubmit()" class="url-form">
+  <input
+    type="text"
+    name="originalUrl"
+    [(ngModel)]="originalUrl"
+    placeholder="Enter your URL"
+    required
+    class="url-input"
+    />
+  <div class="form-bottom">
+
+      <label class="private-checkbox">
+      <input type="checkbox" [(ngModel)]="isPrivate" name="isPrivate" />
+      <span>Private</span>
+    </label>
+  
+ 
+    <button type="submit" [disabled]="loading" class="generate-btn">
+      {{ loading ? 'Generating...' : 'Generate' }}
+    </button>
+      </div>
+
+  </form>
+
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+  <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+
+  <div *ngIf="createdUrl" class="result">
+  <div class="short-url-box">
+    <strong>Short URL:</strong>
+    <a [href]="createdUrl.shortURL" target="_blank">{{ createdUrl.shortURL }}</a>
+    <button class="copy-btn" (click)="copy(createdUrl.shortURL)">Copy</button>
+  </div>
+</div>
+</div>

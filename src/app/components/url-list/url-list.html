@@ -1,0 +1,29 @@
+<div class="url-list-container">
+  <h5 class="section-title">Public URLs</h5>
+
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search URLs..."
+      [(ngModel)]="search"
+      (input)="searchUrls()"
+    />
+  </div>
+
+  <!-- Scrollable box for URLs -->
+  <div class="url-list-scroll">
+    <div class="url-card" *ngFor="let url of urls">
+      <div class="url-main">
+        <a [href]="url.shortURL" target="_blank" class="short-url">
+          {{ url.shortURL }}
+        </a>
+        <button class="copy-btn" (click)="copy(url.shortURL)">Copy</button>
+        <span class="click-count">{{ url.totalClicks }} clicks</span>
+      </div>
+      <div class="original-url">{{ url.originalURL }}</div>
+      <button class="delete-btn" (click)="deleteUrl(url.id)">Delete</button>
+    </div>
+  </div>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
