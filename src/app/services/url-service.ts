@@ -8,7 +8,8 @@ import { ShortUrl } from '../models/short-url.model';
 @Injectable({ providedIn: 'root' })
 export class UrlService {
   private base = `${environment.apiBase}/api/tinyurl`; 
-  // points directly to backend url
+  
+  // pointing directly to backend url
 
   constructor(private http: HttpClient) {}
 
