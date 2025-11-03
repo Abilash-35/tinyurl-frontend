@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,8 +7,7 @@ import { ShortUrl } from '../models/short-url.model';
 @Injectable({ providedIn: 'root' })
 export class UrlService {
   private base = `${environment.apiBase}/api/tinyurl`; 
-  
-  // pointing directly to backend url
+  // points directly to backend url
 
   constructor(private http: HttpClient) {}
 
