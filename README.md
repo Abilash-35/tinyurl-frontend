@@ -1,59 +1,45 @@
-# TinyurlWebapp
+# TinyURL WebApp (Angular Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+This is the **frontend** of the TinyURL project — a simple URL shortener built using **Angular** for the UI and **ASP.NET Core** for the backend API.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
+- Create short URLs from long links  
+- Mark URLs as **private** or **public**  
+- List all public URLs  
+- Search and delete URLs  
+- Redirect to original links using short codes  
+
+---
+
+## Tech Stack
+
+- **Frontend:** Angular 17  ,   Typescript, Bootstrap , REST API Integration.
+- **Backend:** ASP.NET Core Web API (Entity Framework + SQLite)  
+- **Hosting:** Netlify (Frontend), Render (Backend)
+
+---
+
+## How It Works
+
+1. The Angular app calls backend API endpoints like:
+2. The backend stores and returns shortened URLs.
+3. The frontend displays the list and allows management.
+
+
+git clone https://github.com/Abilash-35/tinyurl-frontend.git
+cd Tinyurl-webapp
+
+ ## Install dependencies 
+npm install
+
+## angular development server
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+## To create build production-ready
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Output will be in the dist/ directory.
+This folder can be deployed to Netlify. 
