@@ -21,10 +21,11 @@ export class UrlService {
    // List all public URLs or search by term
   listUrls(search?: string): Observable<ShortUrl[]> {
     if (search && search.trim()) {
+      
       // search endpoint if term provided
       const encoded = encodeURIComponent(search.trim());
       return this.http.get<ShortUrl[]>(`${this.base}/search?term=${encoded}`);
-    } else {
+    } else { 
       // list all if no search term
       return this.http.get<ShortUrl[]>(this.base);
     }
