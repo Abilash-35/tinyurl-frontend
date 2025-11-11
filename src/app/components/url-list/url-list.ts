@@ -23,7 +23,7 @@ export class UrlListComponent implements OnInit {
     this.loadUrls();
   }
 
-  // ✅ Load all public URLs
+  // Load all public URLs
   loadUrls() {
     this.loading = true;
     this.message = '';
@@ -44,7 +44,7 @@ export class UrlListComponent implements OnInit {
     });
   }
 
-  // ✅ Search URLs by code or partial term
+  // Search URLs by code or term
   searchUrls() {
     const term = this.search.trim();
     if (!term) {
