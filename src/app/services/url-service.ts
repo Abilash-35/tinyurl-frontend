@@ -23,7 +23,7 @@ export class UrlService {
     if (search && search.trim()) {
       // search endpoint if term provided
       const encoded = encodeURIComponent(search.trim());
-      return this.http.get<ShortUrl[]>(`${this.base}/search/${encoded}`);
+      return this.http.get<ShortUrl[]>(`${this.base}/search?term=${encoded}`);
     } else {
       // list all if no search term
       return this.http.get<ShortUrl[]>(this.base);
