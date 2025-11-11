@@ -12,7 +12,7 @@ import { ShortUrl } from '../../models/short-url.model';
   styleUrls: ['./url-form.css']
 })
 export class UrlFormComponent {
-  originalUrl = '';
+  originalUrl = '';  
   isPrivate = false;
   createdUrl?: ShortUrl;
   errorMsg = '';
