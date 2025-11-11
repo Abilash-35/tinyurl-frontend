@@ -22,8 +22,13 @@ export class UrlFormComponent {
   constructor(private urlService: UrlService) {}
 
   onSubmit() {
-    if (!this.originalUrl.trim()) {
-      this.errorMsg = 'Please enter a valid URL';
+    const urlPattern = 
+    
+    /^(https?:\/\/)?(([\w\-\u00a1-\uffff]+(\.[\w\-\u00a1-\uffff]+)*\.[a-z]{2,}))(:(\d{1,5}))?([\w\-\u00a1-\uffff\.,@?^=%&:\/~\+#]*[\w\-\u00a1-\uffff@?^=%&\/~\+#])?$/i
+;
+    
+    if (!this.originalUrl.trim() || !urlPattern.test(this.originalUrl.trim())){
+      this.errorMsg = 'Please enter a valid URL(must start with http:// or https://)';
       this.successMsg = '';
       return;
     }
